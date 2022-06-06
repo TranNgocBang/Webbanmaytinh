@@ -1,0 +1,35 @@
+﻿@model Webbanmaytinh.Models.AdminUser
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="cangiua">
+    <div style="width:397px;height:103.6px;padding:30px 22px;color:black;background:#b9b1b1;border-radius:15px;">
+        <div class="card-header" style="text-align: center;font-size:30px;">
+            Đăng nhập
+        </div>
+    </div>
+    <div style="width:397px;height:326.8px;padding:12px">
+        @using (Html.BeginForm("LoginAccount", "LoginUser"))
+        {
+            @Html.AntiForgeryToken()
+
+            @Html.TextBoxFor(m => m.NameUser, "", new { @class = "form-control", @placeholder = "Tên đăng nhập", style = "width: 335px;height:41.6px" })
+
+            <div style="height:20px;"></div>
+            @Html.PasswordFor(m => m.PasswordUser, new { @class = "form-control", @placeholder = "Mật khẩu" })
+
+            <div style="height:20px;"></div>
+            <input type="submit" name="submit" class="dangnhap" value="Đăng nhập" style="width:337px;height:40px" />
+
+        }
+        <div style="height:10px;"></div>
+        <div>
+            <a class="thea" href="#">Quên mật khẩu</a>
+            <a class="thea2" href="#">Đăng nhập với SMS</a>
+        </div>
+    </div>
+</div>
+
+
